@@ -39,6 +39,8 @@ env = BalancedDenseTreeDeterministicMDP(branching=3, depth=5) #creates a tree wi
 
 reward, observation, is_finished, internal_state = env.step(3) #picks arm 0
 ```
+This is how such an environment would look like:
+![BalancedTree](images/balanced_tree_env.png)
 
 ---
 ## Documentation:
