@@ -57,6 +57,8 @@ setup(
                         "numpy",
                         "matplotlib",
                         "seaborn>=0.9",
+                        "networkx",
+                        "pygraphviz"
                        ],
 
       python_requires='>=3.6',
