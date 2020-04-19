@@ -1,3 +1,6 @@
 __pycache__
 .pytest_cache
 deploy_to_pypi.sh
+build
+dist
+rlenvs.egg-info
