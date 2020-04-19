@@ -74,7 +74,13 @@ class MultiarmBernoulliBandit(BaseEnvironment):
 
     def get_specs(self):
         """ Returns arms and success probabilities and seed. """
-        return self.arms, self.success_probabilities, self._seed
+        specs_dictionary = {
+            "arms" : self.arms,
+            "success_probabilities" : self.success_probabilities,
+            "seed" : self._seed,
+        }
+        return specs_dictionary
+
 
 
 ####################################################

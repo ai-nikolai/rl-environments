@@ -42,11 +42,11 @@ class BanditsTestCase(unittest.TestCase):
         env = MultiarmBernoulliBandit(arms=3, success_probabilities=probabilities)
         env.seed(99)
 
-        arms, probs, seed = env.get_specs()
+        specs_dict = env.get_specs()
 
-        self.assertEqual(arms, 2)
-        self.assertListEqual(probs, probabilities)
-        self.assertEqual(seed, 99)
+        self.assertEqual(specs_dict["arms"], 2)
+        self.assertListEqual(specs_dict["success_probabilities"], probabilities)
+        self.assertEqual(specs_dict["seed"], 99)
 
 
 
