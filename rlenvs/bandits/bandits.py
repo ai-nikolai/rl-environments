@@ -51,7 +51,7 @@ class MultiarmBernoulliBandit(BaseEnvironment):
 
     def step(self, action):
         if action<self.arms and action>=0:
-            reward = int( np.random.binomial(1,p=self.success_probabilities[action]) )
+            reward = self._get_reward(action)
             observation = None
             is_finished = False
             state = None
@@ -81,7 +81,9 @@ class MultiarmBernoulliBandit(BaseEnvironment):
         }
         return specs_dictionary
 
-
+    def _get_reward(self, action):
+        """ Gets the reward for this Env. """
+        return int( np.random.binomial(1,p=self.success_probabilities[action]) )
 
 ####################################################
 # MAIN
