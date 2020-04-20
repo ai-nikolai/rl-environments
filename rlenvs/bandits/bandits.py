@@ -48,6 +48,9 @@ class MultiarmBernoulliBandit(BaseEnvironment):
 
         self._seed = seed
 
+    def initialise(self):
+        """ Returns the first observation. """
+        return None
 
     def step(self, action):
         if action<self.arms and action>=0:

@@ -69,10 +69,15 @@ class BalancedDenseTreeDeterministicMDP(BaseEnvironment):
         self._seed = seed
 
         #things used actively
+        self.initialise()
+
+
+    def initialise(self):
+        """ Returns the first observation. """
         self.previous_state = self.root_name
         self.current_state = self.root_name
         self.current_depth = 0
-
+        return self.root_name
 
 
     def step(self, action):

@@ -39,6 +39,10 @@ class BaseEnvironment(object):
     :get_specs() -> returns the custom specs of the environment:
     """
 
+    def initialise(self):
+        """ returns the first observation. """
+        raise NotImplementedError
+
     def step(self,action):
         """ Run a single step. """
         raise NotImplementedError
