@@ -52,6 +52,7 @@ That is the interface provided by every environment:
 class BaseEnvironment(object):
     """
     Implements the following methods inspired by both OpenAI gym and Deepmind Bsuite (dm_env).
+    :initialise() -> observation, resets and initialises the environment and returns first observation:
     :step(action) -> reward(float), observation(Optional[Any]), is_finished(bool), state(Optional[Any]):
     :reset() -> "resets the environement":
     :undo() -> "goes to the previous state of the environment" reward, observation, is_finished(bool), sate(Optional[Any]):

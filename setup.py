@@ -39,7 +39,7 @@ setup(
       #
 
       name          = 'rlenvs',
-      version       = '0.0.0.1',
+      version       = '0.0.0.2',
       url           = 'https://github.com/ai-nikolai/rl-environments',
       author        = 'nikolai rozanov',
       author_email  = 'nikolai.rozanov@gmail.com',
