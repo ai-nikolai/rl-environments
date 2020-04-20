@@ -41,7 +41,7 @@ class MathsUtilsTest(unittest.TestCase):
 
         self.assertEqual(number_of_successors,BRANCHING_NUMBER)
         self.assertEqual(depth_of_tree, DEPTH)
-        self.assertEqual(root, tree_utils.ROOT_NAME)
+        self.assertEqual(root, tree_utils.get_root_name(DEPTH))
         self.assertEqual(len(branching_names), BRANCHING_NUMBER)
 
 
@@ -65,7 +65,7 @@ class MathsUtilsTest(unittest.TestCase):
 if __name__=="__main__":
     graph, root, action_names = tree_utils.generate_balanced_tree(2,3, return_all=True)
     # tree_utils.print_edges(graph)
-    # tree_utils.draw_tree(graph)
+    tree_utils.draw_tree(graph)
 
     for x in graph.successors(root):
         print(x)

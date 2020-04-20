@@ -27,7 +27,6 @@ from networkx.drawing.nx_agraph import graphviz_layout, to_agraph, view_pygraphv
 ####################################################
 # CODE
 ####################################################
-ROOT_NAME = "ROOT"
 def generate_balanced_tree(branching, depth, return_all=False):
     """ Returns a DirectedGraph that is a balanced Tree and the root of the tree. (From left to right)
     branching = 2, depth = 2
@@ -40,7 +39,7 @@ def generate_balanced_tree(branching, depth, return_all=False):
 
     graph = nx.DiGraph()
 
-    root = ROOT_NAME
+    root = get_root_name(depth)
     graph.add_node(root) #root
 
     _generate_balanced_tree(graph, alphabet, root, 0, branching, depth)
@@ -73,13 +72,18 @@ def _generate_balanced_tree(graph, alphabet, current_root, current_depth, branch
 
 def get_tree_depth_from_node(node):
     """ Returns the depth of the node. """
-    if node==ROOT_NAME:
-        return 0
     tokens_separated = node.split(Alphabet.get_separator())
     total_depth = len(tokens_separated)-1
+    if node==get_root_name(total_depth):
+        return 0
     node_height = tokens_separated.count(Alphabet.get_null_character_without_separator())
     return total_depth - node_height
-    
+
+
+def get_root_name(depth):
+    """ Returns the Rootname. """
+    return Alphabet.get_null_character() * depth
+
 
 def print_tree_from_root(graph, root):
     """
